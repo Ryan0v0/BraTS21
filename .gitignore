@@ -135,3 +135,6 @@ dmypy.json
 # runs
 runs
 final_weights
+
+# data
+**/*.nii

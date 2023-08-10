@@ -604,8 +604,11 @@ def create_train_val_dataset_files(args: argparse.Namespace) \
     if args.train_data_path:
         train_dataset_dict = create_database(args.train_data_path,
                                              required_modality=["t1", "t1ce", "flair", "t2", "seg"])
+        print("train_dataset_dict", train_dataset_dict)
         train_id = list(train_dataset_dict)
         val_id = list()
+        if len(train_dataset_dict) < 5:
+            raise ValueError(f"The number of samples in the train dataset ({len(train_dataset_dict)}) is less than the required number of splits (5).")
         if args.fold is not None and not args.val_data_path:
             k_fold = KFold(5, shuffle=True, random_state=args.seed)
             splits = list(k_fold.split(list(train_dataset_dict)))
