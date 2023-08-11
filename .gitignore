@@ -138,3 +138,4 @@ final_weights
 
 # data
 **/*.nii
+/data/model*/

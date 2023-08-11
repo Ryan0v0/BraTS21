@@ -4,10 +4,10 @@ act: relu
 width: 48
 dropout: 0.0
 num_classes: 3
-train_data_path: ./data/MICCAI_FeTS2021_TrainingData/
+train_data_path: /nfs-share/wz341/CMS/BraTS21/data/MICCAI_FeTS2021_TrainingData/
 val_data_path: null
 already_preprocess: false
-save_path: ./data/model1/fold0/
+save_path: /nfs-share/wz341/CMS/BraTS21/data/model1/fold0/
 resume: null
 no_full_name: true
 batch_size: 1
